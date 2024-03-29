@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asaenko <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/20 14:16:15 by asaenko           #+#    #+#             */
+/*   Updated: 2024/03/20 14:16:17 by asaenko          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 static char	*set_line(char *buffer)
@@ -19,42 +31,39 @@ static char	*set_line(char *buffer)
 	buffer[i + 1] = 0;
 	return (remainder);
 }
+
 static char	*fill_buffer(int fd, char *remainder, char *buffer)
 {
 	ssize_t	chars_read;
 	char	*temp;
 
-	chars_read = 1;
-	while (chars_read > 0)
+	chars_read = read(fd, buffer, BUFFER_SIZE);
+	if (chars_read == -1)
 	{
-		chars_read = read(fd, buffer, BUFFER_SIZE);
-		if (chars_read == -1)
-		{
-			free(remainder);
-			return (NULL);
-		}
-		else if (chars_read == 0)
-			break ;
-		buffer[chars_read] = '\0';
-		if (!remainder)
-			remainder = ft_strdup("");
-		temp = remainder;
-		remainder = ft_strjoin(temp, buffer);
-		free(temp);
-		temp = NULL;
-		if (ft_strchr(buffer, '\n'))
-			break ;
+		free(remainder);
+		return (NULL);
 	}
+	else if (chars_read == 0)
+		return (remainder);
+	buffer[chars_read] = '\0';
+	if (!remainder)
+		remainder = ft_strdup("");
+	temp = remainder;
+	remainder = ft_strjoin(temp, buffer);
+	free(temp);
+	temp = NULL;
+	if (ft_strchr(buffer, '\n'))
+		return (remainder);
 	return (remainder);
 }
 
 char	*get_next_line(int fd)
 {
-	static char *remainder;
-	char *line;
-	char *buffer;
+	static char	*remainder;
+	char		*line;
+	char		*buffer;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		return (NULL);
 	}
