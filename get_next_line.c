@@ -1,71 +1,71 @@
 #include "get_next_line.h"
 
-static char	*set_line(char *buffer)
+char	*fill_storage(int fd, char *storage)
 {
-	char	*remainder;
-	ssize_t	i;
-
-	i = 0;
-	while (buffer[i] != '\n' && buffer[i] != 0)
-		i++;
-	if (buffer[i] == 0 || buffer[1] == 0)
-		return (NULL);
-	remainder = ft_substr(buffer, i + 1, ft_strlen(buffer) - i);
-	if (*remainder == 0)
-	{
-		free(remainder);
-		remainder = NULL;
-	}
-	buffer[i + 1] = 0;
-	return (remainder);
-}
-static char	*fill_buffer(int fd, char *remainder, char *buffer)
-{
-	ssize_t	chars_read;
+	int		chars_read;
+	char	*buffer;
 	char	*temp;
 
+	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buffer)
+		return (NULL);
 	chars_read = 1;
-	while (chars_read > 0)
+	while (!ft_strchr(storage, '\n') && chars_read > 0)
 	{
 		chars_read = read(fd, buffer, BUFFER_SIZE);
-		if (chars_read == -1)
-		{
-			free(remainder);
-			return (NULL);
-		}
-		else if (chars_read == 0)
-			break ;
+		if (chars_read <= 0 && !ft_strlen(storage))
+			return (free(buffer), free(storage), NULL);
 		buffer[chars_read] = '\0';
-		if (!remainder)
-			remainder = ft_strdup("");
-		temp = remainder;
-		remainder = ft_strjoin(temp, buffer);
+		temp = storage;
+		storage = ft_strjoin(temp, buffer);
 		free(temp);
 		temp = NULL;
-		if (ft_strchr(buffer, '\n'))
-			break ;
 	}
-	return (remainder);
+	free(buffer);
+	return (storage);
+}
+
+char	*extract_line(char *storage)
+{
+	char	*line;
+	char	*temp;
+	char	*newline;
+
+	newline = ft_strchr(storage, '\n');
+	if (newline)
+	{
+		line = ft_substr(storage, 0, newline - storage + 1);
+		temp = storage;
+		free(temp);
+		temp = NULL;
+	}
+	else
+	{
+		line = ft_strdup(storage);
+		free(storage);
+	}
+	return (line);
 }
 
 char	*get_next_line(int fd)
 {
-	static char *remainder;
-	char *line;
-	char *buffer;
+	static char	*storage;
+	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
+		free(storage);
+		storage = NULL;
 		return (NULL);
 	}
-	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
-		return (NULL);
-	line = fill_buffer(fd, remainder, buffer);
-	free(buffer);
-	buffer = NULL;
+	if (!storage)
+		storage = ft_strdup("");
+	storage = fill_storage(fd, storage);
+	if (!storage)
+		return (free(storage), NULL);
+	line = extract_line(storage);
 	if (!line)
-		return (NULL);
-	remainder = set_line(line);
+		return (free(storage), NULL);
+	storage = ft_substr(storage, ft_strlen(line), ft_strlen(storage) - ft_strlen(line));
 	return (line);
 }
