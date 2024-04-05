@@ -78,6 +78,7 @@ char	*get_next_line(int fd)
 	line = extract_line(storage);
 	if (!line)
 		return (free(storage), NULL);
-	storage = ft_substr(storage, ft_strlen(line), ft_strlen(storage) - ft_strlen(line));
+	storage = ft_substr(storage, ft_strlen(line), ft_strlen(storage)
+			- ft_strlen(line));
 	return (line);
 }
