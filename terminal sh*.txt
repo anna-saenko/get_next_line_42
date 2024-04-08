@@ -1,240 +1,69 @@
-BUFFER_SIZE = 1]: 
-Invalid fd: 1.OK 2.OK 3.OK 
-files/empty: 1.OK 2.OK 
-files/nl: ==872393== Invalid read of size 1
-==872393==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872393==    by 0x40752A: get_next_line (get_next_line.c:81)
-==872393==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872393==    by 0x40507F: main (mandatory.cpp:36)
-==872393==  Address 0x4de4a90 is 0 bytes inside a block of size 2 free'd
-==872393==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872393==    by 0x407429: extract_line (get_next_line.c:51)
-==872393==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872393==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872393==    by 0x40507F: main (mandatory.cpp:36)
-==872393==  Block was alloc'd at
-==872393==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872393==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872393==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872393==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872393==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872393==    by 0x40507F: main (mandatory.cpp:36)
-==872393== 
-==872393== Invalid read of size 1
-==872393==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872393==    by 0x4077C1: ft_substr (get_next_line_utils.c:104)
-==872393==    by 0x40755E: get_next_line (get_next_line.c:81)
-==872393==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872393==    by 0x40507F: main (mandatory.cpp:36)
-==872393==  Address 0x4de4a90 is 0 bytes inside a block of size 2 free'd
-==872393==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872393==    by 0x407429: extract_line (get_next_line.c:51)
-==872393==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872393==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872393==    by 0x40507F: main (mandatory.cpp:36)
-==872393==  Block was alloc'd at
-==872393==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872393==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872393==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872393==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872393==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872393==    by 0x40507F: main (mandatory.cpp:36)
-==872393== 
-1.OK 2.OK 
-files/41_no_nl: ==872394== Invalid read of size 1
-==872394==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872394==    by 0x40752A: get_next_line (get_next_line.c:81)
-==872394==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872394==    by 0x4052AB: main (mandatory.cpp:41)
-==872394==  Address 0x4de5cb0 is 0 bytes inside a block of size 42 free'd
-==872394==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872394==    by 0x40744F: extract_line (get_next_line.c:57)
-==872394==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872394==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872394==    by 0x4052AB: main (mandatory.cpp:41)
-==872394==  Block was alloc'd at
-==872394==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872394==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872394==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872394==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872394==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872394==    by 0x4052AB: main (mandatory.cpp:41)
-==872394== 
-==872394== Invalid read of size 1
-==872394==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872394==    by 0x4077C1: ft_substr (get_next_line_utils.c:104)
-==872394==    by 0x40755E: get_next_line (get_next_line.c:81)
-==872394==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872394==    by 0x4052AB: main (mandatory.cpp:41)
-==872394==  Address 0x4de5cb0 is 0 bytes inside a block of size 42 free'd
-==872394==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872394==    by 0x40744F: extract_line (get_next_line.c:57)
-==872394==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872394==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872394==    by 0x4052AB: main (mandatory.cpp:41)
-==872394==  Block was alloc'd at
-==872394==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872394==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872394==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872394==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872394==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872394==    by 0x4052AB: main (mandatory.cpp:41)
-==872394== 
-1.OK 2.OK 
-files/41_with_nl: ==872395== Invalid read of size 1
-==872395==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872395==    by 0x40752A: get_next_line (get_next_line.c:81)
-==872395==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872395==    by 0x4054D7: main (mandatory.cpp:46)
-==872395==  Address 0x4de5f50 is 0 bytes inside a block of size 42 free'd
-==872395==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872395==    by 0x407429: extract_line (get_next_line.c:51)
-==872395==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872395==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872395==    by 0x4054D7: main (mandatory.cpp:46)
-==872395==  Block was alloc'd at
-==872395==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872395==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872395==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872395==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872395==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872395==    by 0x4054D7: main (mandatory.cpp:46)
-==872395== 
-==872395== Invalid read of size 1
-==872395==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872395==    by 0x4077C1: ft_substr (get_next_line_utils.c:104)
-==872395==    by 0x40755E: get_next_line (get_next_line.c:81)
-==872395==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872395==    by 0x4054D7: main (mandatory.cpp:46)
-==872395==  Address 0x4de5f50 is 0 bytes inside a block of size 42 free'd
-==872395==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872395==    by 0x407429: extract_line (get_next_line.c:51)
-==872395==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872395==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872395==    by 0x4054D7: main (mandatory.cpp:46)
-==872395==  Block was alloc'd at
-==872395==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872395==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872395==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872395==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872395==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872395==    by 0x4054D7: main (mandatory.cpp:46)
-==872395== 
-1.OK ==872395== Invalid read of size 1
-==872395==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872395==    by 0x40752A: get_next_line (get_next_line.c:81)
-==872395==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872395==    by 0x4054E9: main (mandatory.cpp:46)
-==872395==  Address 0x4de6120 is 0 bytes inside a block of size 2 free'd
-==872395==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872395==    by 0x40744F: extract_line (get_next_line.c:57)
-==872395==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872395==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872395==    by 0x4054E9: main (mandatory.cpp:46)
-==872395==  Block was alloc'd at
-==872395==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872395==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872395==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872395==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872395==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872395==    by 0x4054E9: main (mandatory.cpp:46)
-==872395== 
-2.OK 3.OK 
-files/42_no_nl: ==872396== Invalid read of size 1
-==872396==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872396==    by 0x40752A: get_next_line (get_next_line.c:81)
-==872396==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872396==    by 0x405715: main (mandatory.cpp:52)
-==872396==  Address 0x4de6340 is 0 bytes inside a block of size 43 free'd
-==872396==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872396==    by 0x40744F: extract_line (get_next_line.c:57)
-==872396==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872396==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872396==    by 0x405715: main (mandatory.cpp:52)
-==872396==  Block was alloc'd at
-==872396==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872396==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872396==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872396==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872396==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872396==    by 0x405715: main (mandatory.cpp:52)
-==872396== 
-==872396== Invalid read of size 1
-==872396==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872396==    by 0x4077C1: ft_substr (get_next_line_utils.c:104)
-==872396==    by 0x40755E: get_next_line (get_next_line.c:81)
-==872396==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872396==    by 0x405715: main (mandatory.cpp:52)
-==872396==  Address 0x4de6340 is 0 bytes inside a block of size 43 free'd
-==872396==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872396==    by 0x40744F: extract_line (get_next_line.c:57)
-==872396==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872396==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872396==    by 0x405715: main (mandatory.cpp:52)
-==872396==  Block was alloc'd at
-==872396==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872396==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872396==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872396==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872396==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872396==    by 0x405715: main (mandatory.cpp:52)
-==872396== 
-1.OK 2.OK 
-files/42_with_nl: ==872397== Invalid read of size 1
-==872397==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872397==    by 0x40752A: get_next_line (get_next_line.c:81)
-==872397==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872397==    by 0x405941: main (mandatory.cpp:57)
-==872397==  Address 0x4de65e0 is 0 bytes inside a block of size 43 free'd
-==872397==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872397==    by 0x407429: extract_line (get_next_line.c:51)
-==872397==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872397==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872397==    by 0x405941: main (mandatory.cpp:57)
-==872397==  Block was alloc'd at
-==872397==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872397==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872397==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872397==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872397==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872397==    by 0x405941: main (mandatory.cpp:57)
-==872397== 
-==872397== Invalid read of size 1
-==872397==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872397==    by 0x4077C1: ft_substr (get_next_line_utils.c:104)
-==872397==    by 0x40755E: get_next_line (get_next_line.c:81)
-==872397==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872397==    by 0x405941: main (mandatory.cpp:57)
-==872397==  Address 0x4de65e0 is 0 bytes inside a block of size 43 free'd
-==872397==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872397==    by 0x407429: extract_line (get_next_line.c:51)
-==872397==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872397==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872397==    by 0x405941: main (mandatory.cpp:57)
-==872397==  Block was alloc'd at
-==872397==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872397==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872397==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872397==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872397==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872397==    by 0x405941: main (mandatory.cpp:57)
-==872397== 
-1.OK ==872397== Invalid read of size 1
-==872397==    at 0x407596: ft_strlen (get_next_line_utils.c:20)
-==872397==    by 0x40752A: get_next_line (get_next_line.c:81)
-==872397==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872397==    by 0x405953: main (mandatory.cpp:57)
-==872397==  Address 0x4de67b0 is 0 bytes inside a block of size 2 free'd
-==872397==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872397==    by 0x40744F: extract_line (get_next_line.c:57)
-==872397==    by 0x4074FD: get_next_line (get_next_line.c:78)
-==872397==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872397==    by 0x405953: main (mandatory.cpp:57)
-==872397==  Block was alloc'd at
-==872397==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==872397==    by 0x407601: ft_strjoin (get_next_line_utils.c:36)
-==872397==    by 0x40737B: fill_storage (get_next_line.c:32)
-==872397==    by 0x4074C5: get_next_line (get_next_line.c:75)
-==872397==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
-==872397==    by 0x405953: main (mandatory.cpp:57)
-==872397== 
+files/nl: 1.OK 2.OK ==875048== 1 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==875048==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==875048==    by 0x4076EA: ft_strdup (get_next_line_utils.c:80)
+==875048==    by 0x407477: get_next_line (get_next_line.c:76)
+==875048==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
+==875048==    by 0x40507F: main (mandatory.cpp:36)
+==875048== 
+==875048== 2 bytes in 1 blocks are definitely lost in loss record 2 of 2
+==875048==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==875048==    by 0x4075CE: ft_strjoin (get_next_line_utils.c:36)
+==875048==    by 0x407370: fill_storage (get_next_line.c:33)
+==875048==    by 0x407492: get_next_line (get_next_line.c:77)
+==875048==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
+==875048==    by 0x40507F: main (mandatory.cpp:36)
+==875048== 
+
+files/41_no_nl: ==875049== Invalid read of size 1
+==875049==    at 0x407563: ft_strlen (get_next_line_utils.c:20)
+==875049==    by 0x4074F7: get_next_line (get_next_line.c:83)
+==875049==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
+==875049==    by 0x4052AB: main (mandatory.cpp:41)
+==875049==  Address 0x4de5cb0 is 0 bytes inside a block of size 42 free'd
+==875049==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==875049==    by 0x407414: extract_line (get_next_line.c:58)
+==875049==    by 0x4074CA: get_next_line (get_next_line.c:80)
+==875049==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
+==875049==    by 0x4052AB: main (mandatory.cpp:41)
+==875049==  Block was alloc'd at
+==875049==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==875049==    by 0x4075CE: ft_strjoin (get_next_line_utils.c:36)
+==875049==    by 0x407370: fill_storage (get_next_line.c:33)
+==875049==    by 0x407492: get_next_line (get_next_line.c:77)
+==875049==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
+==875049==    by 0x4052AB: main (mandatory.cpp:41)
+==875049== 
+==875049== Invalid read of size 1
+==875049==    at 0x407563: ft_strlen (get_next_line_utils.c:20)
+==875049==    by 0x40778E: ft_substr (get_next_line_utils.c:104)
+==875049==    by 0x40752B: get_next_line (get_next_line.c:83)
+==875049==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
+==875049==    by 0x4052AB: main (mandatory.cpp:41)
+==875049==  Address 0x4de5cb0 is 0 bytes inside a block of size 42 free'd
+==875049==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==875049==    by 0x407414: extract_line (get_next_line.c:58)
+==875049==    by 0x4074CA: get_next_line (get_next_line.c:80)
+==875049==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
+==875049==    by 0x4052AB: main (mandatory.cpp:41)
+==875049==  Block was alloc'd at
+==875049==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==875049==    by 0x4075CE: ft_strjoin (get_next_line_utils.c:36)
+==875049==    by 0x407370: fill_storage (get_next_line.c:33)
+==875049==    by 0x407492: get_next_line (get_next_line.c:77)
+==875049==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
+==875049==    by 0x4052AB: main (mandatory.cpp:41)
+==875049== 
+1.OK 2.OK ==875049== 1 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==875049==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==875049==    by 0x4076EA: ft_strdup (get_next_line_utils.c:80)
+==875049==    by 0x407477: get_next_line (get_next_line.c:76)
+==875049==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
+==875049==    by 0x4052AB: main (mandatory.cpp:41)
+==875049== 
+==875049== 902 bytes in 41 blocks are definitely lost in loss record 2 of 2
+==875049==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==875049==    by 0x4075CE: ft_strjoin (get_next_line_utils.c:36)
+==875049==    by 0x407370: fill_storage (get_next_line.c:33)
+==875049==    by 0x407492: get_next_line (get_next_line.c:77)
+==875049==    by 0x402CC6: gnl(int, char const*) (gnl.cpp:20)
+==875049==    by 0x4052AB: main (mandatory.cpp:41)
