@@ -46,8 +46,8 @@ char	*extract_line(char *storage)
 	newline = ft_strchr(storage, '\n');
 	if (newline)
 	{
-		line = ft_substr(storage, 0, newline - storage + 1);
 		temp = storage;
+		line = ft_substr(temp, 0, newline - temp + 1);
 		free(temp);
 		temp = NULL;
 	}
