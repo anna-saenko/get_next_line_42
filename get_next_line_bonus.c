@@ -25,7 +25,7 @@ char	*fill_storage(int fd, char *storage)
 	while (!ft_strchr(storage, '\n') && chars_read > 0)
 	{
 		chars_read = read(fd, buffer, BUFFER_SIZE);
-		if (chars_read <= 0 && !ft_strlen(storage))
+		if (chars_read <= 0 && !storage[0])
 			return (free(buffer), free(storage), NULL);
 		buffer[chars_read] = '\0';
 		temp = storage;
@@ -40,23 +40,35 @@ char	*fill_storage(int fd, char *storage)
 char	*extract_line(char *storage)
 {
 	char	*line;
-	char	*temp;
 	char	*newline;
 
 	newline = ft_strchr(storage, '\n');
 	if (newline)
 	{
 		line = ft_substr(storage, 0, newline - storage + 1);
-		temp = storage;
-		free(temp);
-		temp = NULL;
 	}
 	else
 	{
 		line = ft_strdup(storage);
-		free(storage);
 	}
 	return (line);
+}
+char	*get_remainder(char *line, char *storage)
+{
+	char	*temp;
+	size_t	line_len;
+
+	temp = storage;
+	line_len = ft_strlen(line);
+	storage = ft_substr(temp, line_len, ft_strlen(temp)
+			- line_len);
+	free(temp);
+	if(*storage == 0)
+	{
+		free(storage);
+		storage = NULL;
+	}
+	return (storage);
 }
 
 char	*get_next_line(int fd)
@@ -78,7 +90,6 @@ char	*get_next_line(int fd)
 	line = extract_line(storage[fd]);
 	if (!line)
 		return (free(storage[fd]), NULL);
-	storage[fd] = ft_substr(storage[fd], ft_strlen(line), ft_strlen(storage[fd])
-			- ft_strlen(line));
+	storage[fd] = get_remainder(line, storage[fd]);
 	return (line);
 }
